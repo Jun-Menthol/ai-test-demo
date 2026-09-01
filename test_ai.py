@@ -14,7 +14,7 @@ from datetime import datetime
 # ============================================================
 # 配置区（使用前请修改）
 # ============================================================
-API_KEY = "sk-xsrclpqmirlnvtywpcqdbyrucsaubdudqajhwqcewcpjxdny"  
+API_KEY = "你的硅基流动API密钥"
 MODEL = "Qwen/Qwen2.5-7B-Instruct"  # 被测模型
 TIMEOUT = 30  # API 超时时间（秒）
 DELAY = 0.5  # 用例间延时（防止限流）
