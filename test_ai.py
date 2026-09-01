@@ -3,14 +3,23 @@ import json
 import re
 import time
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+# 加载 .env 文件
+load_dotenv()
+
+# 从环境变量读取 API Key
+API_KEY = os.getenv("SILICONFLOW_API_KEY")
+if not API_KEY:
+    raise ValueError("请在 .env 文件中设置 SILICONFLOW_API_KEY")
 
 # ===== 配置 =====
-API_KEY = "sk-xsrclpqmirlnvtywpcqdbyrucsaubdudqajhwqcewcpjxdny"  # 替换成你的密钥
 MODEL = "Qwen/Qwen2.5-7B-Instruct"
 # ================
 
 def call_ai(prompt):
-    url = "https://api.siliconflow.cn/v1/chat/completions"
+   url = "https://api.siliconflow.cn/v1/chat/completions"
     headers = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json"
